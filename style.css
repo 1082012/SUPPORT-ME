@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #38bdf8;
+    --bg: #020617;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: #f8fafc;
+    overflow-x: hidden;
+}
+
+.glass {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.label-titan {
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.input-titan {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+    outline: none;
+}
+
+.input-titan:focus {
+    border-color: var(--primary);
+    background: rgba(56, 189, 248, 0.05);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
+}
+
+.btn-titan {
+    width: 100%;
+    background-color: var(--primary);
+    color: #020617;
+    padding: 1.25rem;
+    border-radius: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: all 0.3s;
+    box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.3);
+}
+
+.btn-titan:hover {
+    background-color: #7dd3fc;
+    transform: translateY(-2px);
+}
+
+.btn-titan:active {
+    scale: 0.95;
+}
+
+.back-link {
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary);
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: #fff;
+}
+
+.toast-container {
+    position: fixed;
+    top: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    pointer-events: none;
+}
+
+.toast-container.active {
+    opacity: 1;
+    top: 3.5rem;
+}
+
+.toast-text {
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Page Transitions */
+#formSection, #successSection {
+    animation: reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes reveal {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
